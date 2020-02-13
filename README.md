@@ -31,7 +31,7 @@ The following functions are used with a Date Class Instance:
 - **format** - the format for the outputted date. *Formatting guide below.*
 - **Returns** the formatted string.
 ### Format Guide
-The following data formats for each character. For Example, date.format('Y-m-d H:i:s') world match to something like '2020-02-13 19:20:12' (depending on the Date class instance). Most of the characters are based on PHP's date function formatting.
+The following data formats for each character. *For Example, date.format('Y-m-d H:i:s') would match to something like '2020-02-13 19:20:12' (depending on the Date class instance).* Most of the characters are based on PHP's date function formatting.
 #### Day
 - **d** - Day of the month with leading zeros - *01 to 31*
 - **D** - Three character day of the week representation - *Sun, Mon, Tue,...*
