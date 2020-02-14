@@ -2,7 +2,7 @@ let DateVars = {
     weekdays: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
     months: ['January','February','March','April','May','June','July','August','September','October','November','December'],
     weekday: (weekday,short=false)=>{ if(short) return DateVars.weekdays[weekday].substr(0,3); else return DateVars.weekdays[weekday]; },
-    month: (weekday,short=false)=>{ if(short) return DateVars.months[weekday].substr(0,3); else return DateVars.months[weekday]; },
+    month: (month,short=false)=>{ if(short) return DateVars.months[month].substr(0,3); else return DateVars.months[month]; },
     monthSuffix: (monthday)=>{ if(monthday>=11&&monthday<=13) return 'th'; switch(monthday%10){ case 1: return 'st'; case 2: return 'nd'; case 3: return 'rd'; default: return 'th'; } }
 };
 
