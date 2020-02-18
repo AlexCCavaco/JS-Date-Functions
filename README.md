@@ -21,6 +21,10 @@ The following functions are used with a Date Class Instance:
 - **day** - day of the week to find, from 0 (Sunday) to 6 (Saturday).
 - **Returns** a Date instance representing the next date with the given day of the week.
 
+## isToday()
+- Compares the date with today.
+- **Returns** true if the date equals today or false if it doesn't.
+
 ## addDays(int days)
 - Adds the provided number of days to the date.
 - **day** - the number of days to add (can be negative).
