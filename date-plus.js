@@ -11,6 +11,7 @@ Date.prototype.addDays = function(days) {
     date.setDate(date.getDate() + days);
     return date;
 };
+
 Date.prototype.getWeek = function(sSunday=false){
     let target = new Date(this.valueOf());
     let dayNr = (this.getDay() + 6) % 7;
@@ -20,11 +21,20 @@ Date.prototype.getWeek = function(sSunday=false){
     if(target.getDay()!==4){ target.setMonth(0, (sSunday?0:1) + ((4 - target.getDay()) + 7) % 7); }
     return 1 + Math.ceil((firstThursday - target)/604800000);
 };
+
 Date.prototype.nextDay = function(day){
     let date = new Date(this.valueOf());
     date.setDate(date.getDate() + (day+(7-date.getDay())) % 7);
     return date;
 };
+
+Date.prototype.isToday = function(){
+    let today = new Date();
+    return this.getDate()===today.getDate() &&
+           this.getMonth()===today.getMonth() &&
+           this.getFullYear()===today.getFullYear();
+};
+
 Date.prototype.format = function(format){
     let res = '';
     forAllIn(format.split(""),char=>{
@@ -78,12 +88,14 @@ Date.prototype.format = function(format){
         return [neg,hr,mn];
     }
 };
+
 Date.prototype.isSummerTime = function(){
     let jan = new Date(this.getFullYear(), 0, 1);
     let jul = new Date(this.getFullYear(), 6, 1);
     let max =  Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
     return this.getTimezoneOffset() < max;
 };
+
 Date.prototype.dayOfYear = function(){
     let today = Math.floor((new Date(this.getFullYear(),this.getMonth(),this.getDate())).getTime()/86400000);
     let first = Math.floor((new Date(this.getFullYear(),0,1)).getTime()/86400000);
