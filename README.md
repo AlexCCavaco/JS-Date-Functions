@@ -16,6 +16,10 @@ The following functions are used with a Date Class Instance:
 - **sSunday** - If true the function will consider __Sunday__ as the first day of the week, otherwise __Monday__ will be used.
 - **Returns** the week number.
 
+## getQuarter()
+- Gets the Date's year quarter.
+- **Returns** the Date's year quarter (1-4)
+
 ## nextDay(int day)
 - Finds the next day where its weekday matches the given.
 - **day** - day of the week to find, from 0 (Sunday) to 6 (Saturday).
