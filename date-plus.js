@@ -101,3 +101,7 @@ Date.prototype.dayOfYear = function(){
     let first = Math.floor((new Date(this.getFullYear(),0,1)).getTime()/86400000);
     return today - first;
 };
+Date.prototype.getQuarter = function(){
+    let m = this.getMonth();
+    return Math.ceil((m+1)/3);
+};
