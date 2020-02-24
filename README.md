@@ -10,15 +10,21 @@ The following functions are used with a Date Class Instance:
 ## dayOfYear()
 - Checks witch day of the year the Date instance is.
 - **Returns** the day of the year (0-365).
-
+ 
 ## getWeek(bool sSunday=false)
 - Checks witch week number the Date is a part of, in the scope of the year.
 - **sSunday** - If true the function will consider __Sunday__ as the first day of the week, otherwise __Monday__ will be used.
 - **Returns** the week number.
 
+## getYearWeek(bool sSunday=false)
+- Checks witch yearweek corresponds to the Date.
+- *Created to be compatible with MySQL's YEARWEEK function.*
+- **sSunday** - If true the function will consider __Sunday__ as the first day of the week, otherwise __Monday__ will be used.
+- **Returns** yearweek (for example: 201923).
+
 ## getQuarter()
 - Gets the Date's year quarter.
-- **Returns** the Date's year quarter (1-4)
+- **Returns** the Date's year quarter (1-4).
 
 ## nextDay(int day)
 - Finds the next day where its weekday matches the given.
