@@ -22,6 +22,13 @@ Date.prototype.getWeek = function(sSunday=false){
     return 1 + Math.ceil((firstThursday - target)/604800000);
 };
 
+Date.prototype.getYearWeek = function(sSunday=false){
+    let week = this.getWeek(sSunday)-1;
+    let year = this.getFullYear();
+    if(week===0){ if(this.getMonth()===0){ year--; } week = 52; }
+    return year+(('0'+week).slice(-2));
+};
+
 Date.prototype.nextDay = function(day){
     let date = new Date(this.valueOf());
     date.setDate(date.getDate() + (day+(7-date.getDay())) % 7);
