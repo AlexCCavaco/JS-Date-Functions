@@ -42,6 +42,13 @@ Date.prototype.isToday = function(){
            this.getFullYear()===today.getFullYear();
 };
 
+Date.prototype.daysDiff = function(date=null){
+    if(date===null) date = new Date();
+    let date1 = Date.UTC(this.getFullYear(),this.getMonth(),this.getDate());
+    let date2 = Date.UTC(date.getFullYear(),date.getMonth(),date.getDate());
+    return Math.floor((date1-date2)/(1000*60*60*24));
+};
+
 Date.prototype.format = function(format){
     let res = '';
     forAllIn(format.split(""),char=>{
@@ -108,6 +115,7 @@ Date.prototype.dayOfYear = function(){
     let first = Math.floor((new Date(this.getFullYear(),0,1)).getTime()/86400000);
     return today - first;
 };
+
 Date.prototype.getQuarter = function(){
     let m = this.getMonth();
     return Math.ceil((m+1)/3);
