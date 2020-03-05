@@ -40,6 +40,11 @@ The following functions are used with a Date Class Instance:
 - **day** - the number of days to add (can be negative).
 - **Returns** a Date instance matching the provided day difference.
 
+## daysDiff(Date date)
+- Compares the date with the provided.
+- **date** - an instance of the Date Class.
+- **Returns** the difference in days between the two dates. (negative if the provided date is newer)
+
 ## format(String format)
 - Returns a formatted string based on the provided string.
 - **format** - the format for the outputted date. *Formatting guide below.*
